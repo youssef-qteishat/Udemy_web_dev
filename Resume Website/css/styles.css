@@ -5,19 +5,21 @@ body {
   /*font-family: verdana, sans-serif;*/
   font-family: 'Courier Prime', monospace;
   font-size: 2em;
+  display: inline-block;
 }
 
 h1{
-  margin-top: 50px auto 0 auto;
+  margin-top: 50px auto 0 50px;
   font-size: 5.625rem; /* 16px = 100%, 90px/16px = 5.625em = 562.5% */
   font-family: 'Neucha', cursive;
   color: #c06014;
 }
 
 h2{
-  margin-top: 0;
+  margin: 0;
   font-family: 'Neucha', cursive;
   color: #424642;
+  position: static;
 }
 
 h3 {
@@ -31,7 +33,7 @@ hr {
   border-top-style: dotted;
   border-color: grey;
   border-width: 5px;
-  width: 5%;
+  width: 50%;
 }
 
 a{
@@ -46,15 +48,15 @@ a:hover{
 }
 #header{
   background-color: #1e1e1e;
-  padding: 20px 0;
+  padding: 10px 0;
   width: 100%;
-  position: fixed;
+  position: sticky;
   left: 0;
   top: 0;
 }
 .container{
   width: 86%;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 #header .container{
   display: flex;
@@ -75,6 +77,15 @@ a:hover{
 .main-nav ul li a{
   text-decoration: none;
   color: white;
+}
+
+.skills-section,
+.contact-section
+.about-section{
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  display: flex;
 }
 /*
 ul {
@@ -135,22 +146,10 @@ li a:hover:not(.active) {
 .bottom-container{
   color: #f3f4ed;
   background-color: #424642;
-  padding: 50px 0 20px;
+  padding: 15px 0 5px;
 }
 .pro{
   text-decoration: underline;
-}
-
-.top-cloud{
-  position: absolute;
-  right: 300px;
-  top: 50px;
-}
-
-.bottom-cloud{
-  position: absolute;
-  left: 300px;
-  bottom: 300px;
 }
 
 .contact-message{
@@ -171,7 +170,8 @@ li a:hover:not(.active) {
   font-family: 'Courier Prime', monospace;
   color: #ffffff;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px 10px ;
+  margin-bottom: 10px;
   text-decoration: none;
 }
 
