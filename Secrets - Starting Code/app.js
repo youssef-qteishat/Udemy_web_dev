@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
+
 const {Schema} = mongoose;
 
 const app = express();
@@ -21,6 +23,9 @@ const userSchema = new Schema ({
   email: String,
   password: String
 });
+
+const secret = "Thisisourlittlesecret";
+userSchema.plugin(encrypt, {secret: secret, encryptedFields: ["password"] });
 
 const User = mongoose.model('User', userSchema);
 
@@ -62,7 +67,7 @@ app.post("/login", function(req, res){
       if (foundUser){
         if (foundUser.password === password){
           res.render("secrets");
-        } 
+        }
         else {
           console.log(username);
           console.log(password);
